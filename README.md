@@ -16,3 +16,13 @@ with a hand-rolled `awk` one-liner.
 which is a
 [&ldquo;public-domain equivalent&rdquo;](https://en.wikipedia.org/wiki/Public-domain-equivalent_license)
 license.
+
+To install, copy `fps` to a directory on your `$PATH` (I suggest `~/bin`).
+
+To use, run `fps` with one or more names of files containing log data, or pass
+log data on standard input. You may want to pipe the output to a pager. For
+example, you might run:
+
+```sh
+fps /var/log/auth.log | less
+```
