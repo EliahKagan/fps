@@ -26,7 +26,8 @@ PATTERN = re.compile(r'Failed password for (?:invalid user )?(\w+)')
 def main() -> None:
     """Search input for auth failure messages. Report username frequencies."""
     if len(sys.argv) < 2 and sys.stdin.isatty():
-        print(f'{sys.argv[0]}: warning: no filenames and stdin is a terminal')
+        print(f'{sys.argv[0]}: warning: no filenames and stdin is a terminal',
+              file=sys.stderr)
 
     names = Counter(match.group(1)
                     for match in map(PATTERN.search, fileinput.input())
